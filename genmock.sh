@@ -1,0 +1,1 @@
+mockgen -source=store/conn_store.go -destination=store/mock/conn_store_mock.go

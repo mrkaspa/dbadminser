@@ -5,7 +5,6 @@ import (
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite" // db
-	"github.com/pkg/errors"
 )
 
 type connStoreImpl struct{}
@@ -19,12 +18,30 @@ func NewConnStore() ConnStore {
 
 func (c connStoreImpl) StoreConn(conn Conn) error {
 	return doConn(func(db *gorm.DB) error {
-		db.Create(&conn)
 		if db.NewRecord(conn) {
-			return errors.New("Could not store the conn")
+			return db.Create(&conn).Error
 		}
-		return nil
+		return db.Save(&conn).Error
 	})
+}
+
+func (c connStoreImpl) DeleteConn(connID int) error {
+	return doConn(func(db *gorm.DB) error {
+		var conn Conn
+		err := db.Where(&Conn{ID: uint(connID)}).First(&conn).Error
+		if err != nil {
+			return err
+		}
+		return db.Delete(&conn).Error
+	})
+}
+
+func (c connStoreImpl) ListConn() []Conn {
+	var conns []Conn
+	doConn(func(db *gorm.DB) error {
+		return db.Find(&conns).Error
+	})
+	return conns
 }
 
 func doConn(do doFunc) error {
