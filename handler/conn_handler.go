@@ -18,7 +18,7 @@ type connHandler struct {
 }
 
 func (c connHandler) storeHandler(w http.ResponseWriter, r *http.Request) {
-	conn := store.Conn{}
+	var conn store.Conn
 	err := json.NewDecoder(r.Body).Decode(&conn)
 	if err != nil {
 		w.WriteHeader(http.StatusNotAcceptable)
