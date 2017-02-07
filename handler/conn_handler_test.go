@@ -10,7 +10,7 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	"github.com/mrkaspa/dbadminser/store"
+	"bitbucket.org/hackmin/dbadminser/store"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -5,7 +5,7 @@ import (
 	"log"
 
 	_ "github.com/go-sql-driver/mysql" // needed
-	"github.com/mrkaspa/dbadminser/store"
+	"bitbucket.org/hackmin/dbadminser/store"
 )
 
 // SQLConnManager

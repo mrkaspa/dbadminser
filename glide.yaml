@@ -1,4 +1,4 @@
-package: github.com/mrkaspa/dbadminser
+package: bitbucket.org/hackmin/dbadminser
 import:
 - package: github.com/go-sql-driver/mysql
   version: ^1.3.0
