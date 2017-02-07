@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -45,6 +46,7 @@ func whenTheConnIsSaved(t *testing.T) {
 	connHandlerTest := connHandler{connStore: mockConnStore}
 	conn := store.Conn{}
 	data, _ := json.Marshal(conn)
+	fmt.Println(string(data))
 	req, _ := http.NewRequest(http.MethodPost, "", bytes.NewReader(data))
 	w := httptest.NewRecorder()
 	connHandlerTest.storeHandler(w, req)

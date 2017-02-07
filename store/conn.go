@@ -9,14 +9,14 @@ const MYSQL = "mysql"
 
 // Conn to the DB
 type Conn struct {
-	ID        uint `gorm:"primary_key"`
-	Type      string
-	Name      string
-	User      string
-	Pass      string
-	Host      string
-	DBName    string
-	Port      int
+	ID        uint   `gorm:"primary_key" json:"id"`
+	Type      string `json:"type"`
+	Name      string `json:"name"`
+	User      string `json:"user"`
+	Pass      string `json:"pass"`
+	Host      string `json:"host"`
+	DBName    string `json:"dbname"`
+	Port      int    `json:"port"`
 	CreatedAt time.Time
 	UpdatedAt time.Time
 }

@@ -1,2 +1,2 @@
 go build -o server
-mv server ~/code/js/dbadmin
+mv server ~/code/elm/dbadminui
