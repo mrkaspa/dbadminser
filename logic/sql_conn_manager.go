@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"log"
 
-	"bitbucket.org/hackmin/dbadminser/store"
+	"github.com/mrkaspa/dbadminser/store"
 	_ "github.com/go-sql-driver/mysql" // needed
 )
 

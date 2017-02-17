@@ -1,6 +1,6 @@
 package logic
 
-import "bitbucket.org/hackmin/dbadminser/store"
+import "github.com/mrkaspa/dbadminser/store"
 
 type doFunc func() error
 

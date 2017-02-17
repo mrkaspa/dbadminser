@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"bitbucket.org/hackmin/dbadminser/handler"
+	"github.com/mrkaspa/dbadminser/handler"
 )
 
 func main() {

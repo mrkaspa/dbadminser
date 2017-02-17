@@ -8,8 +8,8 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	"bitbucket.org/hackmin/dbadminser/logic"
-	"bitbucket.org/hackmin/dbadminser/store"
+	"github.com/mrkaspa/dbadminser/logic"
+	"github.com/mrkaspa/dbadminser/store"
 )
 
 type connHandler struct {
