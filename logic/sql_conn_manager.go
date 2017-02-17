@@ -4,28 +4,17 @@ import (
 	"database/sql"
 	"log"
 
-	_ "github.com/go-sql-driver/mysql" // needed
 	"bitbucket.org/hackmin/dbadminser/store"
+	_ "github.com/go-sql-driver/mysql" // needed
 )
 
 // SQLConnManager
 type sqlConnManager struct {
 }
 
-func NewSqlConManager() ConnManager {
+// NewSQLConManager for handling SQL
+func NewSQLConManager() ConnManager {
 	return sqlConnManager{}
-}
-
-func (s sqlConnManager) StoreConn(conn store.Conn) error {
-	return nil
-}
-
-func (s sqlConnManager) ListConns() []store.Conn {
-	return nil
-}
-
-func (s sqlConnManager) DeleteConn(conn store.Conn) error {
-	return nil
 }
 
 func (s sqlConnManager) DoConn(conn store.Conn, do doFunc) error {
